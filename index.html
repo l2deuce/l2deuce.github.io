@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protas Edge | Career Coaching for College Students</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #2d2d2d;
+            --accent-beige: #d4af37;
+            --light-beige: #f5e6d3;
+            --dark-gold: #b8941e;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image-container {
+            padding: 0.5rem;
+        }
+
+        .logo-image-container img {
+            height: 60px;
+            width: auto;
+            display: block;
+        }
+
+        .logo-svg {
+            width: 60px;
+            height: 60px;
+        }
+
+        .logo-text-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .logo-text-main {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+        }
+
+        .logo-text-sub {
+            font-size: 0.7rem;
+            color: var(--accent-beige);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .logo img {
+            height: 70px;
+            width: auto;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-beige);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .cta-button {
+            padding: 0.7rem 1.5rem;
+            background: var(--accent-beige);
+            color: var(--primary-color);
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            background: var(--dark-gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="2" fill="%23d4af37" opacity="0.1"/></svg>');
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #667eea;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: #f7fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 2rem 1rem;
+            color: #2d3748;
+        }
+
+        .service-card p {
+            color: #718096;
+            line-height: 1.7;
+            padding: 0 2rem 2rem;
+        }
+
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--accent-beige);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card:hover:before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            position: relative;
+        }
+
+        .service-icon:after {
+            content: '';
+            position: absolute;
+            inset: -3px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--accent-beige), var(--dark-gold));
+            z-index: -1;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .service-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #2d3748;
+        }
+
+        .service-card p {
+            color: #718096;
+            line-height: 1.7;
+        }
+
+        /* About Us Section */
+        .about-us {
+            padding: 6rem 2rem;
+            background: var(--light-beige);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-intro {
+            font-size: 1.3rem !important;
+            color: #2d3748 !important;
+            font-weight: 500;
+            margin-bottom: 2rem !important;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid #e2e8f0;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-beige);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #718096;
+            font-size: 0.95rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-main-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.95), transparent);
+            padding: 3rem 2rem 2rem;
+            border-radius: 0 0 20px 20px;
+        }
+
+        .image-overlay h3 {
+            color: var(--accent-beige);
+            font-size: 1.8rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .image-placeholder {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            text-align: center;
+            color: white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid var(--accent-beige);
+        }
+
+        .image-placeholder:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .placeholder-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .image-placeholder p {
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        /* Founders Section */
+        .founders-section {
+            margin-top: 6rem;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .founder-card {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .founder-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .founder-avatar {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .founder-photo {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #f7fafc;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .founder-card:hover .founder-photo {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .founder-card h3 {
+            font-size: 1.8rem;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .founder-title {
+            color: var(--accent-beige);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-bio {
+            color: #4a5568;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        @media (max-width: 968px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .founders-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .feature-image {
+            width: 100%;
+            max-width: 200px;
+            height: 200px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-beige);
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover .feature-image {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: var(--light-beige);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .feature:hover .feature-icon {
+            transform: scale(1.1);
+            background: var(--accent-beige);
+        }
+
+        .feature h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #2d3748;
+        }
+
+        .feature p {
+            color: #718096;
+        }
+
+        /* Market Insights Section */
+        .market-insights {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .news-card {
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 2rem;
+            border-left: 4px solid transparent;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            border-left-color: #667eea;
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .news-source {
+            font-size: 0.85rem;
+            color: #667eea;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.8rem;
+        }
+
+        .news-card h3 {
+            font-size: 1.3rem;
+            color: #2d3748;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+        }
+
+        .news-card p {
+            color: #4a5568;
+            line-height: 1.7;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .news-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .news-link:hover {
+            color: #764ba2;
+            transform: translateX(5px);
+        }
+
+        .market-cta {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 15px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 2px solid #667eea;
+        }
+
+        .market-cta p {
+            font-size: 1.1rem;
+            color: #2d3748;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -250px;
+            right: -250px;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3748;
+            color: white;
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-logo-container {
+            display: inline-block;
+        }
+
+        .footer-logo-svg {
+            width: 80px;
+            height: 80px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-beige);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #4a5568;
+            color: #cbd5e0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="logo-image-container">
+                    <img src="https://static.wixstatic.com/media/a40647_56a65e7962fa4981b8cc756209ea5cd5~mv2.png/v1/fill/w_168,h_97,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a40647_56a65e7962fa4981b8cc756209ea5cd5~mv2.png" alt="Protas Edge Logo">
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="https://protas.as.me/" target="_blank" class="cta-button">Book Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="tagline">From College to Career</div>
+            <h1>Your Dream Job Awaits</h1>
+            <p>Professional career coaching that empowers college students to land their dream jobs. Expert guidance for resumes, interviews, networking, and career planning.</p>
+            <div class="hero-buttons">
+                <a href="https://protas.as.me/" target="_blank" class="btn-primary">Get Started Today</a>
+                <a href="#services" class="btn-secondary">Explore Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Comprehensive career coaching tailored to your unique journey</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=250&fit=crop" alt="Professional resume" class="service-image">
+                    <h3>Resume Building</h3>
+                    <p>Create a professional resume that highlights your unique skills and experiences, designed to catch recruiters' attention.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop" alt="Interview preparation" class="service-image">
+                    <h3>Interview Preparation</h3>
+                    <p>Gain confidence with mock interviews and expert coaching for both technical and behavioral interviews.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=250&fit=crop" alt="Professional networking" class="service-image">
+                    <h3>Networking Strategies</h3>
+                    <p>Learn how to build meaningful professional connections that open doors to opportunities.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop" alt="Career planning" class="service-image">
+                    <h3>Career Planning</h3>
+                    <p>Develop a personalized roadmap for success with strategic career advice tailored to your goals.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=250&fit=crop" alt="Job search" class="service-image">
+                    <h3>Job Search Assistance</h3>
+                    <p>Discover opportunities and apply with confidence using proven job search strategies.</p>
+                </div>
+
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=250&fit=crop" alt="Career coaching" class="service-image">
+                    <h3>Career Coaching</h3>
+                    <p>One-on-one coaching sessions to navigate your unique career journey with expert guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about-us" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title" style="text-align: left;">About Protas Edge</h2>
+                    <p class="about-intro">Helping you transition to your next era</p>
+                    
+                    <h3 style="color: #2d3748; margin-bottom: 1rem;">Our Story</h3>
+                    <p>The name Protas is derived from the Latin term "proxima aetas", meaning "next era." It reflects our mission to guide college students as they transition into the next chapter of their lives: their professional careers.</p>
+                    
+                    <p>The idea for Protas Edge was born during an annual ski trip, where friends and former Northwestern classmates Kathy Lai and Deuce Tu reminisced about their undergraduate days. As they reflected on their own experiences navigating the challenges of on-campus recruiting 20 years ago, they realized how much they would have benefited from a service to help them transition from college students to young professionals. Inspired by this realization, they set out to create Protas Edge—a company dedicated to helping students make the leap from their college era to their career era.</p>
+                    
+                    <p>At Protas Edge, we understand that entering the workforce can be daunting. The recruiting process is complex, time-consuming, and increasingly competitive. From networking events to resume submissions and behavioral to technical interviews, it's easy to feel overwhelmed. That's why we've designed our services to provide personalized support tailored to each student's unique goals.</p>
+                    
+                    <p>Our mission is simple: to empower college students to achieve career success. Through small group instruction and 1-on-1 coaching, we help students master every aspect of the recruiting process—from building standout resumes and acing interviews to expanding professional networks. At Protas Edge, we don't just prepare students for their first job; we equip them with the skills and confidence to thrive in their professional journeys.</p>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop" alt="Students collaborating and celebrating success" class="about-main-image">
+                    <div class="image-overlay">
+                        <h3>Your Success Story Starts Here</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Founders Section -->
+            <div class="founders-section">
+                <h2 class="section-title">Meet The Team</h2>
+                <div class="founders-grid">
+                    <div class="founder-card">
+                        <img src="https://static.wixstatic.com/media/a40647_966daee56b1646d1b0acfc903ce401ea~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Headshot_Kathy%20Lai_edited.jpg" alt="Kathy Lai" class="founder-photo">
+                        <h3>Kathy Lai</h3>
+                        <p class="founder-title">Co-Founder</p>
+                        <p class="founder-bio">Kathy has been an instructor for investment banking training programs and interview prep seminars for nearly ten years. Her former students have ended up in financial institutions such as Goldman Sachs, Lazard, and Morgan Stanley. She previously worked at JPMorgan, Blackstone Group, and Lincoln International rising to the level of director. She earned a BA and MBA from Northwestern University. She has also co-founded and served as CFO for several successful startups.</p>
+                    </div>
+                    
+                    <div class="founder-card">
+                        <img src="https://static.wixstatic.com/media/a40647_aaee21f8608e46168e59b284ff8f23fd~mv2.jpg/v1/fill/w_443,h_431,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/headshot6.jpg" alt="Deuce Tu" class="founder-photo">
+                        <h3>Deuce Tu</h3>
+                        <p class="founder-title">Co-Founder</p>
+                        <p class="founder-bio">Deuce began his career in consulting after earning a BA at Northwestern University and quickly transitioned into finance, where he spent a decade as an equity derivatives trader. During this period, he earned an MBA in Analytic Finance from University of Chicago Booth. Since 2012, Deuce has focused on quantitative data analytics and data science, working with some of the largest financial datasets in the country.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose">
+        <div class="container">
+            <h2 class="section-title">Why Choose Protas Edge?</h2>
+            <p class="section-subtitle">Your success is our mission</p>
+            
+            <div class="features-grid">
+                <div class="feature">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=300&h=300&fit=crop" alt="Personalized coaching" class="feature-image">
+                    <h3>Personalized Support</h3>
+                    <p>Every student's journey is unique, and so are our customized solutions.</p>
+                </div>
+
+                <div class="feature">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=300&fit=crop" alt="Expert guidance" class="feature-image">
+                    <h3>Expert Guidance</h3>
+                    <p>Work with experienced career coaches who understand today's job market and college recruiting landscape.</p>
+                </div>
+
+                <div class="feature">
+                    <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=300&h=300&fit=crop" alt="Comprehensive resources" class="feature-image">
+                    <h3>Comprehensive Resources</h3>
+                    <p>Access tools, workshops, and strategies designed specifically for your success.</p>
+                </div>
+
+                <div class="feature">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300&h=300&fit=crop" alt="Success stories" class="feature-image">
+                    <h3>Proven Results</h3>
+                    <p>Join other students who've landed their dream jobs with Protas Edge.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights Section -->
+    <section class="market-insights">
+        <div class="container">
+            <h2 class="section-title">Latest Job Market Insights</h2>
+            <p class="section-subtitle">Stay informed about the current landscape for new graduates</p>
+            
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="news-source">Federal Reserve Bank of New York</div>
+                    <h3>Recent Graduate Unemployment Rises</h3>
+                    <p>Unemployment for recent college graduates reached 5.3% in Q3 2025, with underemployment climbing to 41.8%—the highest since 2020.</p>
+                    <a href="https://www.newyorkfed.org/research/college-labor-market" target="_blank" class="news-link">Read More →</a>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-source">St. Louis Federal Reserve</div>
+                    <h3>Young Grads Hit Hardest by Market Shifts</h3>
+                    <p>College graduates ages 23-27 are experiencing 4.59% unemployment in 2025, up from 3.25% in 2019—a significant increase compared to other demographics.</p>
+                    <a href="https://www.stlouisfed.org/on-the-economy/2025/aug/recent-college-grads-bear-brunt-labor-market-shifts" target="_blank" class="news-link">Read More →</a>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-source">CNBC</div>
+                    <h3>AI Reshaping Entry-Level Hiring</h3>
+                    <p>Only 30% of 2025 graduates secured full-time jobs in their field, as AI and automation transform the entry-level job market landscape.</p>
+                    <a href="https://www.cnbc.com/2025/12/08/how-recent-grads-are-dealing-with-the-shrinking-pool-of-entry-level-jobs.html" target="_blank" class="news-link">Read More →</a>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-source">National Association of Colleges and Employers</div>
+                    <h3>Class of 2025 Started Job Search Earlier</h3>
+                    <p>Recognizing market challenges, 2025 graduates began their job search 6.4 months before graduation, compared to 6 months for 2024 grads.</p>
+                    <a href="https://www.naceweb.org/about-us/press/class-of-2025-college-grads-responded-to-challenges-of-a-tough-job-market" target="_blank" class="news-link">Read More →</a>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-source">Fordham University</div>
+                    <h3>Skills That Make Grads Stand Out</h3>
+                    <p>Communication, adaptability, and AI literacy are now essential for career readiness. Employers seek candidates who can work alongside AI systems.</p>
+                    <a href="https://now.fordham.edu/university-news/what-employers-want-now-and-how-new-grads-can-stand-out/" target="_blank" class="news-link">Read More →</a>
+                </div>
+
+                <div class="news-card">
+                    <div class="news-source">Federal Reserve Bank of Cleveland</div>
+                    <h3>College Advantage Narrows</h3>
+                    <p>The job-finding gap between college and high school graduates has narrowed to historic lows, though college grads maintain advantages in job stability and wages.</p>
+                    <a href="https://www.clevelandfed.org/publications/economic-commentary/2025/ec-202514-are-young-college-graduates-losing-their-edge-in-the-job-market" target="_blank" class="news-link">Read More →</a>
+                </div>
+            </div>
+
+            <div class="market-cta">
+                <p><strong>Navigating a challenging job market?</strong> Our expert coaches help you stand out from the competition with tailored strategies for today's landscape.</p>
+                <a href="https://protas.as.me/" target="_blank" class="cta-button" style="display: inline-block; margin-top: 1rem;">Schedule a Consultation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="book">
+        <div class="container">
+            <h2>Ready to Launch Your Career?</h2>
+            <p>Take the first step toward landing your dream job. Book a consultation today.</p>
+            <a href="https://protas.as.me/" target="_blank" class="btn-primary">Book Your Consultation</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo-container">
+                    <img src="https://static.wixstatic.com/media/a40647_56a65e7962fa4981b8cc756209ea5cd5~mv2.png/v1/fill/w_168,h_97,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/a40647_56a65e7962fa4981b8cc756209ea5cd5~mv2.png" alt="Protas Edge Logo">
+                </div>
+                <p style="margin-top: 1rem;">From College to Career</p>
+                <p style="margin-top: 0.5rem;">Empowering college students to achieve their career goals.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="https://protas.as.me/" target="_blank">Book Online</a>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Phone: 646-543-3823</p>
+                <p>Email: info@protasedge.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Legal</h3>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2025 Protas Edge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
