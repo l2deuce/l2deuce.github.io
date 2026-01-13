@@ -31,9 +31,9 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.98);
+            background: var(--primary-color);
             backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
             z-index: 1000;
             transition: all 0.3s ease;
         }
@@ -61,6 +61,8 @@
             height: 60px;
             width: auto;
             display: block;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
         }
 
         .logo-svg {
@@ -111,10 +113,14 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #4a5568;
+            color: white;
             font-weight: 500;
             transition: color 0.3s ease;
             position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-beige);
         }
 
         .nav-links a:after {
@@ -769,7 +775,7 @@
 
         /* Footer */
         footer {
-            background: #2d3748;
+            background: var(--primary-color);
             color: white;
             padding: 3rem 2rem 1rem;
         }
@@ -781,6 +787,8 @@
         .footer-logo-container img {
             height: 70px;
             width: auto;
+            filter: brightness(0) invert(1);
+            opacity: 0.95;
         }
 
         .footer-content {
@@ -1007,7 +1015,7 @@
     <section class="market-insights">
         <div class="container">
             <h2 class="section-title">Latest Job Market Insights</h2>
-            <p class="section-subtitle">Stay informed about the current landscape for new graduates</p>
+            <p class="section-subtitle">Stay informed about the current landscape for new graduates • Updated January 2025</p>
             
             <div class="news-grid">
                 <div class="news-card">
@@ -1126,9 +1134,9 @@
         window.addEventListener('scroll', () => {
             const header = document.querySelector('header');
             if (window.scrollY > 100) {
-                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.1)';
+                header.style.boxShadow = '0 5px 30px rgba(0, 0, 0, 0.5)';
             } else {
-                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.05)';
+                header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
             }
         });
     </script>
