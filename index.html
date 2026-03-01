@@ -660,6 +660,71 @@
             color: #718096;
         }
 
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--light-beige);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .quote-icon {
+            font-size: 4rem;
+            color: var(--accent-beige);
+            line-height: 1;
+            margin-bottom: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-text {
+            color: #4a5568;
+            line-height: 1.8;
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .highlight-testimonial {
+            background: linear-gradient(135deg, var(--light-beige) 0%, #ffffff 100%);
+            border: 2px solid var(--accent-beige);
+        }
+
+        .testimonial-badge {
+            display: inline-block;
+            background: var(--accent-beige);
+            color: var(--primary-color);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
         /* Market Insights Section */
         .market-insights {
             padding: 6rem 2rem;
@@ -1007,6 +1072,41 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real success stories from students who achieved their career goals</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I loved the materials. Having structured lesson plans and slides to learn from and reference was incredibly helpful. This was also true for the case studies that I could work on independently and then discuss in session.</p>
+                    <div class="testimonial-author">— Protas Edge Client</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I was incredibly grateful for the level of support. Towards the end of my recruiting process, I was meeting with a Protas Edge representative every day, sometimes twice a day! This was what I really think helped me be so successful in this process and receive an offer from my #1 and #2 firms.</p>
+                    <div class="testimonial-author">— Protas Edge Client</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I am so grateful to have found Protas Edge and had this program as a resource. I now can't imagine going back and trying to navigate this process alone.</p>
+                    <div class="testimonial-author">— Protas Edge Client</div>
+                </div>
+
+                <div class="testimonial-card highlight-testimonial">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">I got the Guggenheim offer last Wednesday, and I accelerated to get the PJT Super Day. I got the PJT offer and signed that on Saturday. Thank you so much for all of your help!! It was a big reason why I was prepared for these interviews.</p>
+                    <div class="testimonial-author">— Protas Edge Client</div>
+                    <div class="testimonial-badge">Multiple Top-Tier Offers</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Market Insights Section -->
     <section class="market-insights">
         <div class="container">
@@ -1019,6 +1119,12 @@
                     <h3>Recent Graduate Unemployment Rises</h3>
                     <p>Unemployment for recent college graduates reached 5.3% in Q3 2025, with underemployment climbing to 41.8%—the highest since 2020.</p>
                     <a href="https://www.newyorkfed.org/research/college-labor-market" target="_blank" class="news-link">Read More →</a>
+                </div>
+
+                <div class="news-card highlight-card">
+                    <div class="news-source">Investment Banking Compensation 2025</div>
+                    <h3>First Year Analyst Total Compensation</h3>
+                    <p>Average total compensation for first-year investment banking analysts in 2025 ranges from $150K to $275K+, including base salary, signing bonuses, and year-end bonuses.</p>
                 </div>
 
                 <div class="news-card">
